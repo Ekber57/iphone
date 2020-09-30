@@ -10,6 +10,29 @@ $elaqe = $_POST["elaqe"];
 $gonderen = $_POST["gonderen"];
 $maya = $_POST["maya"];
 switch ($service) {
+  
+case 'faiz_ver':
+$faiz = $_POST["faiz"];
+$myfile = fopen("faiz.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $faiz);
+fclose($myfile);
+echo "<div class='alert alert-success'>
+        <strong>✓</strong> faiz dərəcəsi $faiz təyin edildi
+</div>";
+
+  
+  
+  
+  
+  break;
+  
+  
+  
+  
+  
+  
+  
+  
   case 'yeni_xidmet':
     $orm = new orm();
     if(isset($_SESSION["user"])) {
@@ -919,9 +942,21 @@ case "status_deyis":
     $orm = new orm();
     $orm->statusDeyis($id);
     if($status != 2) {
-    $orm->balans_tenzimle($gonderen,abs((($qiymet*10)/100)),$status+1);
-     echo ($qiymet*10)/100;
+    $myfile = fopen("faiz.txt", "r") or die("Unable to open file!");
+    $faiz = fread($myfile,filesize("faiz.txt"));
+    fclose($myfile);
+    $faiz = intval($faiz);
+    if($faiz>0) {
+    $orm->balans_tenzimle($gonderen,($qiymet*$faiz)/100,$status+1);
+    echo '0';
     }
+    else {
+    $orm->balans_tenzimle($gonderen,0,$status+1);
+    }
+      echo '0';
+    }
+    
+    
   default:
     // code...
     break;

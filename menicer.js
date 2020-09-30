@@ -233,6 +233,7 @@ var post_content = "id="+id+"&gonderen="+mg+"&status="+status+"&qiymet="+qiymet;
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhttp.send(post_content);
     xhttp.onreadystatechange = function(){
+      
       ajax_Xidmetler(say);
      
     }

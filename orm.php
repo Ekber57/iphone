@@ -72,10 +72,16 @@ function balans_tenzimle($id,$deyer,$e) {
    $balans->execute(array($id));
   $balans = $balans->fetch(PDO::FETCH_ASSOC);
   $balans = $balans["balans"];
+  if($e == 1) {
+  $balans = $balans + $deyer;
+  }
+  else {
   $balans = $balans - $deyer;
+    
+  }
   $sql ="UPDATE istifadeciler set balans=? where ad_soyad=?";
-  $balan_tenzimle = $this->pdo->prepare($s);
-  $balan_tenzimle->execute(array($balans,$id));
+  $balan_tenzimle = $this->pdo->prepare($sql);
+  $balan_tenzimle->execute(array((string)$balans,$id));
 }
 
 
