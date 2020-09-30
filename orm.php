@@ -206,7 +206,7 @@ function xidmet_deyisdir($id,$model,$problem,$my,$qiymet,$elaqe) {
   
   
  function istifadeciler() {
-   $istifadeciler = $this->pdo->query("select ad_soyad from istifadeciler where login!='admin'");
+   $istifadeciler = $this->pdo->query("select *  from istifadeciler where login!='admin'");
    return $istifadeciler->fetchAll();
  }
   
