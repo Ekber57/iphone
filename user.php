@@ -5,9 +5,23 @@
     
     $orm = new orm();
     $userler = $orm->istifadeciler();
-    echo "<div id='data_sayi' style='display:none'>";
-    echo count($userler);
-    echo "</div>";
+   
+
+echo '
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <div class="card text-center">
+  <div class="card-header" >
+  <ul class="nav nav-tabs card-header-tabs">
+  <li class="nav-item">
+  <a class="nav-link active" href="#">menecer panel</a>
+  </li>
+  </ul>
+  </div>
+  <div class="card-body" ><div id="data_sayi" style="display:none">';
+  echo count($userler);
+  echo "</div>
+  <div id='menu'>";
+
 
 echo '
 <div class="table-responsive-lg">
@@ -191,11 +205,26 @@ echo "</tr>";
     
     }
     
+    echo '
+    </body></table>
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled" onclick="daha_az()" id="evvelki">
+      <a class="page-link"href="#" tabindex="-1">əvvəlki </a>
+    </li>
+    <li class="page-item" id="novbeti" onclick="daha_cox()">
+      <a class="page-link"   href="#">sonrakı</a>
+    </li>
+  </ul>
+</nav>';
     
     
     
     
-   echo "<script src='user_menicer.js'></script>";
+   echo "
+   <script src='user_menicer.js'></script>
+   <script src='admins/user_seyfele.js'></script>
+   ";
    
    
    include "footer.html";
