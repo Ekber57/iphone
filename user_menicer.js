@@ -25,9 +25,15 @@ silinen_id = id;
 <div class="input-group mb-3">
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">
-<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tablet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+
+
+<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
 </svg>
+
+
+
+
 </span>
 </div>
 <input id="ads" type="text" class="form-control" placeholder="ad soyad" aria-label="model" aria-describedby="basic-addon1">
@@ -78,7 +84,15 @@ silinen_id = id;
 <div class="input-group mb-3">
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">
-<i class="fa fa-money"></i>
+
+
+
+<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-check-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9.854-2.854a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+</svg>
+
+
+
 </span>
 </div>
 <input id="login" type="text" class="form-control" placeholder="login" aria-label="model" aria-describedby="basic-addon1">
@@ -87,7 +101,19 @@ silinen_id = id;
 <div class="input-group mb-3">
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">
-<i class="fa fa-money"></i>
+
+
+
+<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+
+
+  <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+  <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+</svg>
+
+
+
 </span>
 </div>
 <input id="sifre" type="text" class="form-control" placeholder="şifrə" aria-label="model" aria-describedby="basic-addon1">
