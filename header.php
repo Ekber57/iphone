@@ -117,7 +117,7 @@
       <?php
       session_start();
      if(isset($_SESSION["admin"])){
-     echo ' <a class="nav-item nav-link active" href="admin.php">ana səyfə <span class="sr-only">(current)</span></a>
+     echo ' <a class="nav-item nav-link active" href="admin.php">ana səhifə <span class="sr-only">(current)</span></a>
      
      
      <a class="nav-item nav-link active" href="admin.php?bolme=faiz_ver">faiz təyini <span class="sr-only">(current)</span></a>
