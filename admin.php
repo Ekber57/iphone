@@ -279,8 +279,8 @@ echo '
       <th scope="col">ay</th>
       <th scope="col">il</th>
       <th scope="col">maya dəyəri</th>
+      <th scope="col">ödəniş</th>
       <th scope="col">gəlir</th>
-      <th scope="col">qazanc</th>
    
       
     </tr>
@@ -301,18 +301,18 @@ echo "</td>";
 
 
 echo "<td>";
-echo $k["pul"];
+echo $k["pul"]; echo " ₼";
 echo "</td>";
 
 
 
 echo "<td>";
-echo $k["q"];
+echo $k["q"]; echo " ₼";
 echo "</td>";
 
 
 echo "<td>";
-echo $k["q"] - $k["pul"];
+echo $k["q"] - $k["pul"]; echo " ₼";
 echo "</td></tr>";
 
 }
