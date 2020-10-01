@@ -32,7 +32,7 @@ echo '
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">xidmətin  dəyişdiririlməsi</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">menecer məlümatları</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,13 +69,13 @@ echo '
     
     
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">xidmətin  silinməsi</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">menecerin silinməsi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" id="alert">
-        xidməti silməyə əminsiniz?
+        meneceri silməyə əminsiniz?
       </div>
             <button style="display: none"  type="button" class="btn btn-secondary" id="close" data-dismiss="modal"></button>
         
@@ -103,13 +103,13 @@ echo '
     
     
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"> xidmətin dəyişdirilməsi</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"> məlümatların dəyişdirilməsi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" id="alert_deyisdirme">
-        xidməti dəyişdirilməsinə əminsiniz?
+        menecer məlümatlarının dəyişdirilməsinə əminsiniz?
       </div>
             <button style="display: none"  type="button" class="btn btn-secondary" id="close" data-dismiss="modal"></button>
         

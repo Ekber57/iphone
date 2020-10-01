@@ -13,7 +13,7 @@ private $pdo;
   public function __construct()
   {
     try {
-      $this->pdo = new PDO("mysql:host=localhost; dbname=apple" , $this->username,
+      $this->pdo = new PDO("mysql:host=localhost; dbname=apple;charset=utf8" , $this->username,
       $this->password);
       $this->pdo->setAttribute(PDO::ATTR_ERRMODE,
       PDO::ERRMODE_EXCEPTION);
@@ -30,6 +30,14 @@ private $pdo;
    $balans->execute(array($istifadeci));
    return $balans->fetch(PDO::FETCH_ASSOC);
   }
+  
+  
+function profil_duzelt($ad_soyad,$nomre,$login,$sifre,$balans,$id) {
+  $update = $this->pdo->prepare("update istifadeciler set ad_soyad=?,nomre=?,login=?,sifre=?,balans=? where id=?");
+  $update->execute(array($ad_soyad,$nomre,$login,$sifre,$balans,$id));
+}
+
+  
   
   
   
@@ -53,7 +61,7 @@ private $pdo;
    
   $balans = $balans->fetch(PDO::FETCH_ASSOC);
   $balans = $balans["balans"];
-  if($balans > $mebleq) {
+  if($balans >= $mebleq) {
   $balans = $balans - $mebleq;
    $cixar = $this->pdo->prepare("UPDATE istifadeciler set balans = ? where ad_soyad=?");
    $cixar->execute(array($balans,$istifadeci));
@@ -89,6 +97,12 @@ function balans_tenzimle($id,$deyer,$e) {
 
 function xidmet_sil($id) {
   $sil = $this->pdo->prepare("DELETE FROM xidmetler where id=?");
+  $sil->execute(array($id));
+  
+}
+
+function profil_sil($id) {
+  $sil = $this->pdo->prepare("DELETE FROM istifadeciler where id=?");
   $sil->execute(array($id));
   
 }
@@ -206,7 +220,7 @@ function xidmet_deyisdir($id,$model,$problem,$my,$qiymet,$elaqe) {
   
   
  function istifadeciler() {
-   $istifadeciler = $this->pdo->query("select *  from istifadeciler where login!='admin'");
+   $istifadeciler = $this->pdo->query("select *  from istifadeciler");
    return $istifadeciler->fetchAll();
  }
   

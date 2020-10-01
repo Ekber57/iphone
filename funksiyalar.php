@@ -47,7 +47,7 @@ switch ($ay) {
   
   case 'october':
     // code...
-    echo "oktiyabr";
+    echo "oktyabr";
     break;
   
   case 'november':

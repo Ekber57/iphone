@@ -254,11 +254,11 @@ echo '
     <tr>
       <th scope="col">#</th>
       <th scope="col">model</th>
-      <th scope="col">gonderen</th>
+      <th scope="col">menecer</th>
       <th scope="col">problem</th>
-      <th scope="col">maya deyeri</th>
-      <th scope="col">qiymet</th>
-      <th scope="col">elaqe</th>
+      <th scope="col">maya dəyəri</th>
+      <th scope="col">qiymət</th>
+      <th scope="col">əlaqə</th>
       <th scope="col">tarix</th>';
       
      echo ' <th scope="col">status</th>
@@ -575,11 +575,11 @@ echo '
     <tr>
       <th scope="col">#</th>
       <th scope="col">model</th>
-      <th scope="col">gonderen</th>
+      <th scope="col">menecer</th>
       <th scope="col">problem</th>
-      <th scope="col">maya deyeri</th>
-      <th scope="col">qiymet</th>
-      <th scope="col">elaqe</th>
+      <th scope="col">maya dəyəri</th>
+      <th scope="col">qiymət</th>
+      <th scope="col">əlaqə</th>
       <th scope="col">tarix</th>';
       
      echo ' <th scope="col">status</th>
@@ -889,6 +889,21 @@ case "xidmet_sil":
   xidmət bazadan silindi !
 </div>';
   break;
+  
+case "profil_sil":
+  $id = $_GET["id"];
+  $orm = new orm();
+  
+  $orm->profil_sil($id);
+  echo '<div class="alert alert-success">
+        <strong>✓</strong>
+  menecer bazadan silindi !
+</div>';
+  break;
+
+
+
+
 
 
 case "istifadeciler":
@@ -904,6 +919,34 @@ case "istifadeciler":
   }
   
   break;
+
+
+
+
+case "profil_deyisdirme":
+  $id = $_GET["id"];
+  $orm = new orm();
+  $orm->profil_duzelt(
+    $_POST["ads"],
+    $_POST["nomre"],
+    $_POST["login"],
+    $_POST["sifre"],
+    $_POST["balans"],
+    $_POST["id"]
+   
+    
+  );
+  
+ // $orm->xidmet_sil($id);
+  echo '<div class="alert alert-success">
+        <strong>✓</strong>
+  menecer məlümatları uğurla dəyişdirildi !
+</div>';
+  break;
+
+
+
+
 
 
 
@@ -941,6 +984,7 @@ case "status_deyis":
    
     $orm = new orm();
     $orm->statusDeyis($id);
+    if($gonderen != "admin") {
     if($status != 2) {
     $myfile = fopen("faiz.txt", "r") or die("Unable to open file!");
     $faiz = fread($myfile,filesize("faiz.txt"));
@@ -955,7 +999,7 @@ case "status_deyis":
     }
       echo '0';
     }
-    
+}
     
   default:
     // code...

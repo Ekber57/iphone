@@ -54,11 +54,12 @@ document.getElementById("menu").innerHTML = `
   </label>
 </div>
 <select class="custom-select" id="gonderen">
-  <option selected>göndərən seçin</option>';
+  ';
   
 $orm = new orm();
   $data = $orm->istifadeciler();
   foreach ($data as $istifadeci) {
+   
     echo '<option value="';
     echo $istifadeci["ad_soyad"];
     echo '">';

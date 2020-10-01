@@ -116,7 +116,7 @@ document.getElementById("login").value =login.textContent.trim();
   
 document.getElementById("sifre").value =(sifre.textContent).replace("₼","").trim();
   
-document.getElementById("balans").value = balans.textContent.trim();
+document.getElementById("balans").value = balans.textContent.replace(" ","").replace("₼","").trim();
   
   
   
@@ -128,13 +128,13 @@ document.getElementById("sil_duymesi").innerHTML =`
 <div class="spinner-border" style="width: 1.1rem; height: 1.1rem;" role="status">
   <span class="sr-only">Loading...</span>
   </div>
-xidmət silinir...`;
+menecer silinir...`;
 
 
 setTimeout(function(){
   var sil_alert = document.getElementById("alert");
    var http = new XMLHttpRequest();
-  http.open("GET","ajax.php?service=xidmet_sil&id="+silinen_id.toString(),true);
+  http.open("GET","ajax.php?service=profil_sil&id="+silinen_id.toString(),true);
   http.send();
    
     http.onreadystatechange = function(){
@@ -149,7 +149,7 @@ setTimeout(()=>{
   
 document.getElementById("passiv_duyme").innerHTML =`<button type="button" class="btn btn-secondary" data-dismiss="modal" id="xeyr" >xeyr</button> <button id="sil_duymesi" onclick="sil()" type="button" class="btn btn-danger">bəli</button>
         `;
-sil_alert.textContent = "xidməti silməyə əminsiniz?";
+sil_alert.textContent = "profili silməyə əminsiniz?";
 },200);
 
 }
@@ -165,13 +165,13 @@ document.getElementById("deyis_duymesi").innerHTML =`
 <div class="spinner-border" style="width: 1.1rem; height: 1.1rem;" role="status">
   <span class="sr-only">Loading...</span>
   </div>
-xidmət dəyişdirilir...`;
+məlümatlar dəyişdirilir...`;
 
 setTimeout(function(){
   var deyisdir_alert = document.getElementById("alert_deyisdirme");
 var xhttp = new XMLHttpRequest();
-xhttp.open("POST", "ajax.php?service=xidmet_deyisdirme", true);
-var post_content = "id="+silinen_id.toString()+"&model="+model.value+"&elaqe="+elaqe.value+"&problem="+problem.value+"&my="+my.value.toString()+"&qiymet="+qiymet.value.toString();
+xhttp.open("POST", "ajax.php?service=profil_deyisdirme", true);
+var post_content = "id="+silinen_id.toString()+"&ads="+ads.value+"&nomre="+nomre.value+"&login="+login.value+"&sifre="+sifre.value.toString()+"&balans="+balans.value.toString();
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhttp.send(post_content);
     xhttp.onreadystatechange = function(){
@@ -189,7 +189,7 @@ setTimeout(()=>{
   
 document.getElementById("passiv_duyme").innerHTML =`<button type="button" class="btn btn-secondary" data-dismiss="modal" id="xeyr" >xeyr</button> <button id="sil_duymesi" onclick="sil()" type="button" class="btn btn-danger">bəli</button>
         `;
-sil_alert.textContent = "xidməti silməyə əminsiniz?";
+sil_alert.textContent = "meneceri silməyə əminsiniz?";
 },200);
 ajax_Xidmetler(say);
 
@@ -207,7 +207,7 @@ setTimeout(()=>{
   
 document.getElementById("passiv_duyme_deyisdirme").innerHTML =`<button type="button" class="btn btn-secondary" data-dismiss="modal" >xeyr</button> <button id="deyis_duymesi" onclick="deyisdir()" type="button" class="btn btn-danger">bəli</button>
         `;
-alert_deyisdirme.textContent = "xidməti dəyişdirməyə  əminsiniz?";
+alert_deyisdirme.textContent = "meneceri dəyişdirməyə  əminsiniz?";
 },200);
 ajax_Xidmetler(say);
 }
