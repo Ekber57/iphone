@@ -168,7 +168,7 @@ function butunXidmetler($sira) {
 function statistika($hardan=false) {
     if($hardan == false) {
      
-      $butun_xidmetler = $this->pdo->query('Select DATE_FORMAT(tarix,"%M,%Y") as ay, SUM(maya_deyeri) as pul, SUM(qiymet) as q  FROM xidmetler where status=1 GROUP BY ay order by DATE(tarix) DESC LIMIT 0,3');
+      $butun_xidmetler = $this->pdo->query('Select DATE_FORMAT(tarix,"%M,%Y") as ay, SUM(maya_deyeri) as pul, SUM(qiymet) as q  FROM xidmetler where status=1 GROUP BY ay order by DATE(tarix) DESC LIMIT 0,12');
      
       $say = $this->pdo->query('Select DATE_FORMAT(tarix,"%M,%Y") as ay, SUM(maya_deyeri) as pul, SUM(qiymet) as q  FROM xidmetler where status=1 GROUP BY ay order by DATE(tarix) DESC');
      
@@ -177,7 +177,7 @@ function statistika($hardan=false) {
     }
     else {
       
-      $butun_xidmetler = $this->pdo->query("Select DATE_FORMAT(tarix,'%M,%Y') as ay, SUM(maya_deyeri) as pul, SUM(qiymet) as q  FROM xidmetler where status=1 GROUP BY ay order by DATE(tarix) DESC LIMIT $hardan,3");
+      $butun_xidmetler = $this->pdo->query("Select DATE_FORMAT(tarix,'%M,%Y') as ay, SUM(maya_deyeri) as pul, SUM(qiymet) as q  FROM xidmetler where status=1 GROUP BY ay order by DATE(tarix) DESC LIMIT $hardan,12");
       return $butun_xidmetler->fetchAll();
     }
       
@@ -219,9 +219,30 @@ function xidmet_deyisdir($id,$model,$problem,$my,$qiymet,$elaqe) {
   
   
   
- function istifadeciler() {
+ function istifadeciler($hardan = false,$e=0) {
+   if($hardan == "siyahi" && $e > 0) {
+   $istifadeciler = $this->pdo->query("select *  from istifadeciler LIMIT 12");
+   $say = $this->pdo->query("select * from istifadeciler");
+   $say = $say->rowCount();
+ 
+   return array($istifadeciler->fetchAll(),$say);
+   }
+   else if ($e > 0) {
+   $istifadeciler = $this->pdo->query("select *  from istifadeciler LIMIT $hardan,12");
+   return $istifadeciler->fetchAll();
+   }
+   
+   else {
+     
    $istifadeciler = $this->pdo->query("select *  from istifadeciler");
    return $istifadeciler->fetchAll();
- }
+   }
+     
+   
+   
+     
+   }
+   
+ 
   
 }

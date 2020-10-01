@@ -9,7 +9,7 @@ id=id.replace("login","");
 id=id.replace("sifre","");
 id=id.replace("balans","");
 
-alert(id)
+
 silinen_id = id;
   var ads = document.getElementById("ads"+id);
   

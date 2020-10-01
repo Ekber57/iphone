@@ -8,12 +8,15 @@ var seyfe_sayi = 1;
 var data_sayi = document.getElementById("data_sayi").textContent;
 
 
-alert(data_sayi)
 
 function daha_cox() {
 
-seyfe_sayi = Math.ceil(data_sayi/3);
+seyfe_sayi = Math.ceil(data_sayi/12);
+
 if(seyfe_sayi > seyfe && document.getElementById("novbeti").className != "page-item disabled") {
+  
+  
+
   document.getElementById("menu").innerHTML =`
   <div style="padding-top:25%;padding-bottom:25%">
 
@@ -28,12 +31,12 @@ yüklənir...
 
 
   `;
-  say+=3;
+  say+=12;
   setTimeout(function() {
     
     
   var http = new XMLHttpRequest();
-  http.open("GET","ajax.php?service=ajax_statistika&hardan="+say.toString(),true);
+  http.open("GET","ajax.php?service=ajax_userler&hardan="+say.toString(),true);
   http.send();
    
     http.onreadystatechange = function(){
@@ -67,11 +70,10 @@ document.getElementById("menu").innerHTML = http.responseText;
 function daha_az() {
   
 
-data_sayi = document.getElementById("data_sayi").textContent;
-seyfe_sayi = Math.ceil(data_sayi/3);
+seyfe_sayi = Math.ceil(data_sayi/12);
 if(say>0) {
 if(seyfe >=1 && document.getElementById("evvelki").className != "page-item disabled") {
-say-=3;
+say-=12;
 
   document.getElementById("menu").innerHTML =`
   <div style="padding-top:25%;padding-bottom:25%">
@@ -88,11 +90,11 @@ say-=3;
   var http = new XMLHttpRequest();
   if(say > 0) {
   
-  http.open("GET","ajax.php?service=ajax_statistika&hardan="+say.toString(),true);
+  http.open("GET","ajax.php?service=ajax_userler&hardan="+say.toString(),true);
   }
   else {
     
-  http.open("GET","ajax.php?service=ajax_statistika",true);
+  http.open("GET","ajax.php?service=ajax_userler&hardan="+say,true);
   }
   http.send();
    

@@ -14,7 +14,7 @@ function daha_cox() {
   
 data_sayi = document.getElementById("data_sayi").textContent;
 
-seyfe_sayi = Math.ceil(data_sayi/3);
+seyfe_sayi = Math.ceil(data_sayi/12);
 if(seyfe_sayi > seyfe && document.getElementById("novbeti").className != "page-item disabled") {
   document.getElementById("menu").innerHTML =`
   <div style="padding-top:25%;padding-bottom:25%">
@@ -30,7 +30,7 @@ yüklənir...
 
 
   `;
-  say+=3;
+  say+=12;
   setTimeout(function() {
     
     
@@ -70,10 +70,10 @@ function daha_az() {
   
 
 data_sayi = document.getElementById("data_sayi").textContent;
-seyfe_sayi = Math.ceil(data_sayi/3);
+seyfe_sayi = Math.ceil(data_sayi/12);
 if(say>0) {
 if(seyfe >=1 && document.getElementById("evvelki").className != "page-item disabled") {
-say-=3;
+say-=12;
 
   document.getElementById("menu").innerHTML =`
   <div style="padding-top:25%;padding-bottom:25%">

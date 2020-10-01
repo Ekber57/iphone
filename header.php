@@ -122,6 +122,9 @@
      
      <a class="nav-item nav-link active" href="admin.php?bolme=faiz_ver">faiz təyini <span class="sr-only">(current)</span></a>
      
+     
+     <a class="nav-item nav-link active" href="admin.php?bolme=userler">menecer panel <span class="sr-only">(current)</span></a>
+     
      <a class="nav-item nav-link active" href="admin.php?bolme=statistika">statistika <span class="sr-only">(current)</span></a>
      <a class="nav-item nav-link active" href="admin.php?bolme=odenis_et">ödəniş et <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="admin.php?bolme=qeydiyyat">satıcı qeydiyyatı</a>';
@@ -138,6 +141,3 @@
 </nav>
 
 <div class="container-fluid">
-  <?php
- 
-  ?>
