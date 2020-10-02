@@ -40,6 +40,9 @@ background-position: center;
 }
 
 
+.navbar-light.navbar-nav.nav-link {
+    color: red;
+}
 
 
 
@@ -174,28 +177,31 @@ font-weight:bold;
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
+
       <?php
       session_start();
      if(isset($_SESSION["admin"])){
-     echo ' <a class="nav-item nav-link active" href="admin.php">Ana Səhifə<span class="sr-only">(current)</span></a>
+     echo '
+<b>
+ <a class="nav-item nav-link active" style="color:white" href="admin.php">Ana Səhifə<span class="sr-only">(current)</span></a>
      
      
-     <a class="nav-item nav-link active" href="admin.php?bolme=faiz_ver">Faiz Təyini <span class="sr-only">(current)</span></a>
+     <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=faiz_ver">Faiz Təyini <span class="sr-only">(current)</span></a>
      
      
-     <a class="nav-item nav-link active" href="admin.php?bolme=userler">Menecer Panel <span class="sr-only">(current)</span></a>
+     <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=userler">Menecer Panel <span class="sr-only">(current)</span></a>
      
-     <a class="nav-item nav-link active" href="admin.php?bolme=statistika">Statistika <span class="sr-only">(current)</span></a>
-     <a class="nav-item nav-link active" href="admin.php?bolme=odenis_et">Ödəniş et <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="admin.php?bolme=qeydiyyat">Menecer Qeydiyyatı</a>';
+     <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=statistika">Statistika <span class="sr-only">(current)</span></a>
+     <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=odenis_et">Ödəniş et <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=qeydiyyat">Menecer Qeydiyyatı</a>';
       
      }
      if(isset($_SESSION["admin"]) || isset($_SESSION["user"]) ) {
-     echo ' <a class="nav-item nav-link active" href="admin.php?bolme=cixis_et">Çıxış Et</a>';
+     echo ' <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=cixis_et">Çıxış Et</a>';
       
      }
       ?>
-     
+     </b>
     </div>
   </div>
 </nav>
