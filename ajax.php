@@ -410,7 +410,7 @@ echo "</td></tr>";
     
   case "login":
     $login = $_POST["login"];
-    $sifre = $_POST["sifre"];
+    $sifre = strtolower($_POST["sifre"]);
    
     $orm = new orm();
     if(!empty($login && $sifre)) {
