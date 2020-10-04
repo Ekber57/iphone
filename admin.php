@@ -332,8 +332,25 @@ echo "</td>";
 
 
 echo "<td>";
-echo $k["q"] - $k["pul"]; echo " ₼";
+
+$xalis =  $k["q"] - $k["pul"];
+$odenis = new $orm();
+$date = [$ay,$il] = explode(",",$k["ay"]);
+$ay = ayi_reqemeCevir(strtolower($ay));
+
+$odenis=$odenis->odenisler($ay,$il,"statistika");
+if($odenis["odenis"] != "") {
+echo $xalis - $odenis["odenis"];
+
+}
+else {
+echo $xalis;
+}
+ echo " ₼";
 echo "</td></tr>";
+
+
+
 
 }
 echo '

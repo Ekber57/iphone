@@ -360,7 +360,26 @@ echo "</td>";
 
 
 echo "<td>";
-echo $k["q"] - $k["pul"]; echo " ₼";
+
+$xalis =  $k["q"] - $k["pul"];
+$odenis = new $orm();
+
+
+$date = [$ay,$il] = explode(",",$k["ay"]);
+$ay = ayi_reqemeCevir(strtolower($ay));
+
+$odenis=$odenis->odenisler($ay,$il,"statistika");
+if($odenis["odenis"] != "") {
+echo $xalis - $odenis["odenis"];
+
+}
+else {
+echo $xalis;
+}
+
+
+
+ echo " ₼";
 echo "</td></tr>";
 
 }
@@ -409,8 +428,9 @@ echo "</td></tr>";
     break;
     
   case "login":
-    $login = $_POST["login"];
-    $sifre = strtolower($_POST["sifre"]);
+    $login = strtolower($_POST["login"]);
+
+    $sifre = $_POST["sifre"];
    
     $orm = new orm();
     if(!empty($login && $sifre)) {

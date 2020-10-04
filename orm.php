@@ -1,5 +1,4 @@
 <?php
-
 class orm
 {
 
@@ -39,10 +38,23 @@ function profil_duzelt($ad_soyad,$nomre,$login,$sifre,$balans,$id) {
 
   
   
+
   
   
+function odenisler($ay,$il,$funksiya="") {
+ 
+      if($funksiya == "statistika") {
   
-  
+      $data = $this->pdo->prepare("select sum(mebleq) as odenis from qebzler where year(tarix) = ? and month(tarix) = ?");
+      $data->execute(array($il,$ay));
+      return $data->fetch(PDO::FETCH_ASSOC);
+      
+      
+      }
+      else {
+        return false;
+      }
+}
   
   
   
@@ -65,7 +77,16 @@ function profil_duzelt($ad_soyad,$nomre,$login,$sifre,$balans,$id) {
   $balans = $balans - $mebleq;
    $cixar = $this->pdo->prepare("UPDATE istifadeciler set balans = ? where ad_soyad=?");
    $cixar->execute(array($balans,$istifadeci));
+
+   $tarix = date("Y-m-d");
+   $qebz = $this->pdo->prepare("insert into qebzler(mebleq,kime,tarix) values (?,?,?)");
+   $qebz->execute(array($mebleq,$istifadeci,$tarix));
+   
   return true;
+  
+  
+  
+  
   }
   else {
     return false;
