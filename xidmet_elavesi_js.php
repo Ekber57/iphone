@@ -296,6 +296,11 @@ document.getElementById("menu").innerHTML = `
 }
 
 echo '
+
+
+
+
+
 function xidmet_elave_et() {
 
 var model = document.getElementById("model");
@@ -327,6 +332,12 @@ xhttp.send(post_content);
   xhttp.onreadystatechange = function(){
     document.getElementById("xidmet_elave_xeberdarliqi").innerHTML= xhttp.responseText
     document.getElementById("xidmet_elave_et_duymesi").innerHTML="əlavə et";
+    model.value = "";
+    qiymet.value = "";
+    maya.value = "";
+    //gonderen.value = "";
+    nomre.value = "";
+    problem.value = "";
   }
 },1500);
 
