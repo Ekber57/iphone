@@ -44,7 +44,7 @@ $mesaj = "
 APPLE SERVİCE \n
 
 
-ay: $ay ₼ \n
+ay: $ay_ \n
 il: $il ₼ \n
 maya: $maya ₼ \n
 ödəniş: $gelir ₼ \n
