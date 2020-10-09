@@ -2,8 +2,8 @@
 class orm
 {
 
-private $username = "nurlan_app" ;
-private $password = "apple" ;
+private $username = "root" ;
+private $password = "" ;
 private $pdo;
   
   /**

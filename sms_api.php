@@ -1,10 +1,137 @@
 <?php
 
 $token = $_GET['token'];
+
 if($token == "azehost") {
 
+ function ayi_reqemeCevir($ay) {
+switch ($ay) {
+  case 'januray':
+    // code...
+    return "01";
+    break;
+  
+  case 'february':
+    
+    // code...
+    return "02";
+    break;
+  
+  case 'march':
+    // code...
+    return "03";
+    break;
+  
+  case 'april':
+    // code...
+    return "04";
+    break;
+  
+  case 'may':
+    // code...
+    return "05";
+    break;
+  
+  case 'june':
+    return '06';
+    // code...
+    break;
+  
+  case 'july':
+    // code...
+    return '07';
+    break;
+  
+  case 'august':
+    // code...
+   return  "08";
+    break;
+  
+  case 'september':
+    return "09";
+    break;
+  
+  case 'october':
+    // code...
+    return "10";
+    break;
+  
+  case 'november':
+    // code...
+    return "11";
+    break;
+  
+  default:
+    // code...
+    return "12";
+    break;
+}
+}
 
-  include "funksiyalar.php";
+
+function ay_tercume($ay) {
+switch ($ay) {
+  case 'januray':
+    // code...
+    return "Yanvar";
+    break;
+  
+  case 'february':
+    return 'Fevral';
+    // code...
+    break;
+  
+  case 'march':
+    // code...
+    return 'Mart';
+    break;
+  
+  case 'april':
+    // code...
+    return "Aprel";
+    break;
+  
+  case 'may':
+    // code...
+    return "May";
+    break;
+  
+  case 'june':
+    return 'İyun';
+    // code...
+    break;
+  
+  case 'july':
+    // code...
+    return 'İyul';
+    break;
+  
+  case 'august':
+    // code...
+    return "Avqust";
+    break;
+  
+  case 'september':
+    return "Sentyabr";
+    break;
+  
+  case 'october':
+    // code...
+    return "Oktyabr";
+    break;
+  
+  case 'november':
+    // code...
+    return "Noyabr";
+    break;
+  
+  default:
+    // code...
+    return "Dekabr";
+    break;
+}
+}
+
    
       
 include "orm.php";
@@ -45,7 +172,7 @@ APPLE SERVİCE \n
 
 
 ay: $ay_ \n
-il: $il ₼ \n
+il: $il \n
 maya: $maya ₼ \n
 ödəniş: $gelir ₼ \n
 gəlir: $xalis ₼ \n
