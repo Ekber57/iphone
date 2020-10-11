@@ -12,6 +12,38 @@ $maya = $_POST["maya"];
 switch ($service) {
   
   
+case "xerc_elavesi":
+$xerc = $_POST["xerc"];
+$mebleq = $_POST["mebleq"];
+if(!empty($xerc && $mebleq)) {
+  if(isset($_SESSION["admin"])) {
+    $orm = new orm();
+    $orm->xerc_elavesi($xerc,$mebleq);
+    echo "<div class='alert alert-success'>
+        <strong>✓</strong> xərc əlavə edildi
+</div>";
+    
+  }
+  
+}
+else {
+
+echo "<div class='alert alert-danger'>
+        <strong>✓</strong> məlümatları tam daxil edin
+</div>";
+}
+break;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 case 'ajax_userler':
   
 $hardan = $_GET["hardan"];

@@ -57,6 +57,17 @@ function odenisler($ay,$il,$funksiya="") {
 }
   
   
+  function xerc_elavesi($xerc,$mebleq) {
+  // xerc elavesi
+    
+    $tarix = date("Y-m-d");
+    $rasxod_elave_et = $this->pdo->prepare("insert into rasxod (rasxod,mebleq,tarix) values (?,?,?)");
+    $rasxod_elave_et->execute(array($xerc,$mebleq,$tarix));
+    
+  }
+  
+  
+  
   
   function yeniXidmet($model,$gonderen,$problem,$maya,$qiymet,$elaqe) {
     
@@ -65,6 +76,10 @@ function odenisler($ay,$il,$funksiya="") {
     $xidmet_elave_et->execute(array($model,$gonderen,$problem,$qiymet,$elaqe,$maya,$tarix));
     
   }
+  
+  
+  
+  
   
   function pul_cixar($istifadeci,$mebleq) {
    $balans = $this->pdo->prepare("select balans FROM  istifadeciler where ad_soyad=?");
