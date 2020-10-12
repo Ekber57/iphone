@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15
--- http://www.phpmyadmin.net
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Hazırlanma Vaxtı: 04 Okt, 2020 saat 19:11
--- Server versiyası: 5.7.30
--- PHP Versiyası: 5.3.29
+-- Hazırlanma Vaxtı: 12 Okt, 2020 saat 11:06
+-- Server versiyası: 5.6.38
+-- PHP Versiyası: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,14 +28,14 @@ SET time_zone = "+00:00";
 -- Cədvəl üçün cədvəl strukturu `istifadeciler`
 --
 
-CREATE TABLE IF NOT EXISTS `istifadeciler` (
+CREATE TABLE `istifadeciler` (
   `id` int(11) NOT NULL,
   `ad_soyad` varchar(200) NOT NULL,
   `nomre` int(15) NOT NULL,
   `login` varchar(200) NOT NULL,
   `sifre` varchar(200) NOT NULL,
   `balans` float NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Sxemi çıxarılan cedvel `istifadeciler`
@@ -53,12 +55,12 @@ INSERT INTO `istifadeciler` (`id`, `ad_soyad`, `nomre`, `login`, `sifre`, `balan
 -- Cədvəl üçün cədvəl strukturu `qebzler`
 --
 
-CREATE TABLE IF NOT EXISTS `qebzler` (
+CREATE TABLE `qebzler` (
   `id` int(11) NOT NULL,
   `mebleq` varchar(200) NOT NULL,
   `kime` varchar(200) CHARACTER SET utf8 NOT NULL,
   `tarix` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Sxemi çıxarılan cedvel `qebzler`
@@ -71,10 +73,30 @@ INSERT INTO `qebzler` (`id`, `mebleq`, `kime`, `tarix`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cədvəl üçün cədvəl strukturu `rasxod`
+--
+
+CREATE TABLE `rasxod` (
+  `id` int(11) NOT NULL,
+  `rasxod` varchar(200) NOT NULL,
+  `mebleq` varchar(200) NOT NULL,
+  `tarix` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Sxemi çıxarılan cedvel `rasxod`
+--
+
+INSERT INTO `rasxod` (`id`, `rasxod`, `mebleq`, `tarix`) VALUES
+(1, 'İsiq pulu', '5', '2020-10-11');
+
+-- --------------------------------------------------------
+
+--
 -- Cədvəl üçün cədvəl strukturu `xidmetler`
 --
 
-CREATE TABLE IF NOT EXISTS `xidmetler` (
+CREATE TABLE `xidmetler` (
   `id` int(11) NOT NULL,
   `model` varchar(200) NOT NULL,
   `musterini_gonderen` varchar(200) NOT NULL,
@@ -84,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `xidmetler` (
   `tarix` date NOT NULL,
   `status` int(1) NOT NULL,
   `maya_deyeri` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Sxemi çıxarılan cedvel `xidmetler`
@@ -155,6 +177,12 @@ ALTER TABLE `qebzler`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Cədvəl üçün indekslər `rasxod`
+--
+ALTER TABLE `rasxod`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Cədvəl üçün indekslər `xidmetler`
 --
 ALTER TABLE `xidmetler`
@@ -168,17 +196,27 @@ ALTER TABLE `xidmetler`
 -- Cədvəl üçün AUTO_INCREMENT `istifadeciler`
 --
 ALTER TABLE `istifadeciler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- Cədvəl üçün AUTO_INCREMENT `qebzler`
 --
 ALTER TABLE `qebzler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Cədvəl üçün AUTO_INCREMENT `rasxod`
+--
+ALTER TABLE `rasxod`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Cədvəl üçün AUTO_INCREMENT `xidmetler`
 --
 ALTER TABLE `xidmetler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

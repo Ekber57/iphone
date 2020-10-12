@@ -55,6 +55,27 @@ function odenisler($ay,$il,$funksiya="") {
         return false;
       }
 }
+
+
+
+  
+function rasxodlar($ay,$il,$funksiya="") {
+ 
+      if($funksiya == "statistika") {
+  
+      $data = $this->pdo->prepare("select sum(mebleq) as rasxodlar from rasxod where year(tarix) = ? and month(tarix) = ?");
+      $data->execute(array($il,$ay));
+      return $data->fetch(PDO::FETCH_ASSOC);
+      }
+      else {
+        return false;
+      }
+}
+
+  
+  
+  
+  
   
   
   function xerc_elavesi($xerc,$mebleq) {

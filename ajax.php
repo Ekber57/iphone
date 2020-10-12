@@ -394,16 +394,23 @@ echo "</td>";
 echo "<td>";
 
 $xalis =  $k["q"] - $k["pul"];
-$odenis = new $orm();
-
+$odenis = new orm();
+$rasxod=new orm();
 
 $date = [$ay,$il] = explode(",",$k["ay"]);
 $ay = ayi_reqemeCevir(strtolower($ay));
 
 $odenis=$odenis->odenisler($ay,$il,"statistika");
-if($odenis["odenis"] != "") {
-echo $xalis - $odenis["odenis"];
+$rasxod=$rasxod->rasxodlar($ay,$il,"statistika");
+if($odenis["odenis"] && $rasxod["rasxodlar"] != ""){
+  echo $xalis = $xalis-$rasxod["rasxodlar"]-$odenis["odenis"];
+}
+else if($odenis["odenis"] != "") {
+echo $xalis = $xalis - $odenis["odenis"];
+}
 
+else if($rasxod["rasxodlar"] != "") {
+echo $xalis = $xalis - $rasxod["rasxodlar"];
 }
 else {
 echo $xalis;

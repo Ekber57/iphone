@@ -199,6 +199,9 @@ font-weight:bold;
      
      <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=statistika">Statistika <span class="sr-only">(current)</span></a>
      <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=odenis_et">Ödəniş et <span class="sr-only">(current)</span></a>
+     
+     <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=rasxod_elavesi">Xərc əlavəsi <span class="sr-only">(current)</span></a>
+     
       <a class="nav-item nav-link active" style="color:white" href="admin.php?bolme=qeydiyyat">Menecer Qeydiyyatı</a>';
       
      }
