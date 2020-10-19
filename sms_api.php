@@ -157,13 +157,21 @@ $gelir  =  $k["q"];
 
 $xalis =  $k["q"] - $k["pul"];
 $odenis = new orm();
+$rasxod = new orm();
+
 $date = [$ay,$il] = explode(",",$k["ay"]);
 $ay = ayi_reqemeCevir(strtolower($ay));
 $odenis=$odenis->odenisler($ay,$il,"statistika");
+$rasxod=$rasxod->rasxodlar($ay,$il,"statistika");
 if($odenis["odenis"] != "") {
 $xalis = $xalis - $odenis["odenis"];
-
 }
+
+if($rasxod["rasxodlar"] != "") {
+$xalis = $xalis - $rasxod["rasxodlar"];
+}
+
+
 
 
 $mesaj = "

@@ -20,7 +20,8 @@ xhttp.send(post_content);
     document.getElementById("xerc_duymesi").innerHTML = "Ödəniş Et";
     xerc.value ="";
     mebleq.value ="";
-    
+    window.location.href="admin.php?bolme=rasxod_elavesi";
+
   }
 },1500);
   

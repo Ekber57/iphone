@@ -2,8 +2,8 @@
 class orm
 {
 
-private $username = "root" ;
-private $password = "" ;
+private $username = "nurlan_app" ;
+private $password = "apple" ;
 private $pdo;
   
   /**
@@ -68,8 +68,12 @@ function rasxodlar($ay,$il,$funksiya="") {
       return $data->fetch(PDO::FETCH_ASSOC);
       }
       else {
-        return false;
+        $rasxod = $this->pdo->query("select * from rasxod order by id DESC");
+      
+        return $rasxod->fetchAll();
+        
       }
+      
 }
 
   

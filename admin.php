@@ -60,6 +60,66 @@ echo '
 <script src="xerc_elavesi.js"></script>
 ';
 
+
+$orm = new orm();
+$g = $orm->rasxodlar(0,0,"rasxodlar");
+echo '
+<br>
+<br>
+
+<div class="table-responsive-lg">
+<table  class="table table-bordered">
+  <thead>
+    <tr>
+    
+      <th scope="col">#</th>
+      <th scope="col">xərc</th>
+      <th scope="col">məbləğ</th>
+      <th scope="col">tarix</th>
+     
+      
+    </tr>
+    </thead>
+    <tbody>';
+
+$say = 0;
+foreach($g as $k) {
+  $say+=1;
+echo "<tr><td>";
+echo $say;
+echo "</td>";
+
+echo "<td>";
+echo $k["rasxod"];
+echo "</td>";
+
+
+
+echo "<td>";
+echo $k["mebleq"]; echo " ₼";
+echo "</td>";
+
+
+
+echo "<td>";
+echo $k["tarix"]; 
+echo "</td>";
+
+
+echo "</tr>";
+
+
+
+
+}
+echo '
+</tbody></table>
+</div>
+</div>';
+
+  
+
+
 break;
 
 
